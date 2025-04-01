@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "husky install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.ts --config ./nodemon.json",
+    "lint": "eslint . --ext .ts,.tsx --fix",
+    "build": "tsc"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --fix"
   },
   "keywords": [],
   "author": "",
@@ -12,9 +18,30 @@
   "type": "commonjs",
   "description": "",
   "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/morgan": "^1.9.9",
     "@types/node": "^22.13.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.29.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.7.0"
   }
 }
