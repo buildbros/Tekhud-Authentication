@@ -41,7 +41,6 @@ export default [
       'no-nested-ternary': 'error',
       'operator-linebreak': ['error', 'before',],
       'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-      'comma-dangle': ['error', 'always',],
     },
   },
 ];
